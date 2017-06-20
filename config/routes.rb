@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root to: 'admin#index'
+
   namespace :admin do
   resources :articles do
   resources :comments
@@ -10,4 +10,8 @@ end
  get 'login'=>"author_sessions#new"
  get 'logout'=>'author_sessions#destroy'
 end
+
+resources :roseblogs do
+	root to: 'roseblogs#index'
+	end
 end

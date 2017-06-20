@@ -58,7 +58,7 @@
                 <td><%=article.short_desc %></td>
                 <td><span class="label label-success"><%= article.status%></span></td>
                 <td><span class="label label-info"> <%= link_to "Edit", admin_article_path(article) %></span>
-                 <span class="label label-danger">Delete</span>
+                 <span class="label label-danger"><%=link_to "Delete", admin_article%></span>
                </td>
              </tr>
              <% end %>

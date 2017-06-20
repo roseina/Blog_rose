@@ -32,6 +32,11 @@ module Roseblog
 		Rails.application.config.assets.precompile += %w( plugins/daterangepicker/daterangepicker.js )
 		Rails.application.config.assets.precompile += %w( bootstrap/css/bootstrap.min.css )
 		Rails.application.config.assets.precompile += %w( js/bootstrap.min.js )
+		Rails.application.config.assets.precompile += %w( css/main.css )
+		Rails.application.config.assets.precompile += %w( js/jquery.min.js )
+		Rails.application.config.assets.precompile += %w( js/skel.min.js )
+		Rails.application.config.assets.precompile += %w( js/util.js )
+		Rails.application.config.assets.precompile += %w( js/main.js )
 
 	end
 end

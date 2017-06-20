@@ -1,0 +1,2 @@
+module RoseblogsHelper
+end

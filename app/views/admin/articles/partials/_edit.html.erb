@@ -1,0 +1,91 @@
+<div class="box box-warning">
+	<div class="box-header with-border">
+		<h3 class="box-title">Edit Article</h3>
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body">
+		<ul>
+			<% @article.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+			<% end %>
+		</ul>
+
+		
+		
+		<%= form_for(@article, html: {multipart: true}, :url => { :action => :update}) do |f| %>
+
+		<div class="form-group">
+			<%= f.label :title, "Article title:" %><br />
+			<%= f.text_field :title, class: 'form-control' %>
+			
+		</div>
+		
+
+		<!-- textarea -->
+		<div class="form-group">
+			<%= f.label :short_desc, "Short Description:" %>
+			<%= f.text_area :short_desc , class: 'form-control' %>
+		</div>
+		<div class="form-group">
+			<%= f.label :long_desc ,"Long Description:" %>
+			<%= f.text_area :long_desc , class: 'form-control' %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :image, "choose an image to upload"%>
+			<%= f.file_field :image%>
+		</div>
+		<!-- radio -->
+		<div class="form-group">
+
+
+			<%=label_tag("Status:") %>
+			<%= f.label :active, "Active" %>
+			<%= f.radio_button :status, "Active"%>
+			<%= f.label :inactive, "Inactive" %>
+			<%= f.radio_button :status, "Inactive"%>
+			
+			<!-- <div class="radio">
+			<f.label>
+				<input type="radio" name="status" id="optionsRadios1" value="option1" checked="">
+				Active
+			</label>
+			<label>
+				<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				Inactive
+			</label>
+		</div> -->
+
+	</div>
+
+	<!-- select -->
+	<!-- <div class="form-group">
+	<label>Select</label>
+	<select class="form-control">
+		<option>option 1</option>
+		<option>option 2</option>
+		<option>option 3</option>
+		<option>option 4</option>
+		<option>option 5</option>
+	</select>
+</div> -->
+
+
+<div class="form-group">
+	<div class="input-group-btn">
+		<%= f.submit :Submit,  class: 'btn btn-success' %>
+	</div>
+	<div class="input-group-btn" style="padding-right:800px;">
+		<button type="button" class="btn btn-warning">Cancel</button>
+	</div>
+
+
+</div>
+
+</div>
+</div>
+<!-- /.box-body -->
+
+<% end %> 
+</div>
+

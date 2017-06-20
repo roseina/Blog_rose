@@ -29,10 +29,6 @@ class Admin::ArticlesController < ApplicationController
 			format.html
 			format.json {render json: @article}
 		end
-		@comment = Comment.new
-		@comment.article_id = @article.id
-
-
 	end
 	def update
 		@article = Article.find(params[:id])

@@ -17,53 +17,65 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Responsive Hover Table</h3>
+                <h3 class="box-title">All Articles</h3>
 
                 <div class="box-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                   <span  class="label label-info">Add new </span>
+                   <span  class="label label-info"> <%= link_to "Add new", new_admin_article_path %>  </span>
 
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                  <tbody><tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Short Description</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                  <% @articles.each do |article| %>
+                 </div>
+               </div>
+             </div>
+             <!-- /.box-header -->
+             <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <th>ID</th>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Short Description</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                <% @articles.each do |article| %>
 
-                  <tr>
+                <tr>
                   <% a=1 %>
 
-                   <td><%= a %></td>
-                   <td><%= article.title%></td>
-                   <td><%=article.short_desc %></td>
-                   <td><span class="label label-success"><%= article.status%></span></td>
-                   <td><span class="label label-info"> <%= link_to "Edit", admin_article_path(article) %></span>
-                   <span class="label label-danger">Delete</span>
-                    </td>
-                 </tr>
-                 <% end %>
-               </tbody></table>
-             </div>
-             <!-- /.box-body -->
-           </div>
-           <!-- /.box -->
+                  <td><%= a %></td>
+
+                  <td>
+                    <% if article.image.exists?%>
+                    <%= image_tag article.image.url(:thumb) %><br/>
+                  <% else %>
+                    <p>
+                      No image available!
+                    </p>
+                    <% end %>
+                  
+                </td>
+                <td><%= article.title%></td>
+                <td><%=article.short_desc %></td>
+                <td><span class="label label-success"><%= article.status%></span></td>
+                <td><span class="label label-info"> <%= link_to "Edit", admin_article_path(article) %></span>
+                 <span class="label label-danger">Delete</span>
+               </td>
+             </tr>
+             <% end %>
+           </tbody></table>
          </div>
+         <!-- /.box-body -->
        </div>
-
-     </section>
-     <!-- /.content -->
+       <!-- /.box -->
+     </div>
    </div>
-   <!-- /.content-wrapper -->
 
-   <!-- /.control-sidebar -->
+ </section>
+ <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
 

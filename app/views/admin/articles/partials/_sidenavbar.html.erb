@@ -27,14 +27,14 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span><%= link_to "Dashboard" %> </span>
             <span class="pull-right-container">
   
             </span>
           </a>
         </li>
-        <li> <i class="fa fa-circle-o text-red"></i> <%= link_to "Articles"  %></li>
-        <li><a href=""><i class="fa fa-circle-o text-yellow"></i> <span>Authors</span></a></li>
+       <li><i class="fa fa-circle-o text-red"></i> <span><%= link_to "Articles" , admin_articles_path(@articles) %> </span></li>
+        <li> <i class="fa fa-circle-o text-yellow"></i> <span><%= link_to "Authors" , admin_authors_path(@authors) %></span></li>
         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Categories</span></a></li>
       </ul>
     </section>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roseblog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!-- Bootstrap 3.3.6 -->
+  <%= stylesheet_link_tag "bootstrap/css/bootstrap.min.css" %>
+  <!-- Font Awesome -->
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" %>
+  <!-- Ionicons -->
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" %>
+  <!-- Theme style -->
+  <%= stylesheet_link_tag "css/AdminLTE.min.css" %>
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <%= stylesheet_link_tag "css/skins/_all-skins.min.css" %>
+  <!-- iCheck -->
+  <%= stylesheet_link_tag "plugins/iCheck/flat/blue.css" %>
+  <!-- Morris chart -->
+  <%= stylesheet_link_tag "plugins/morris/morris.css" %>
+  <!-- jvectormap -->
+  <%= stylesheet_link_tag "plugins/jvectormap/jquery-jvectormap-1.2.2.css" %>
+  <!-- Date Picker -->
+  <%= stylesheet_link_tag "plugins/datepicker/datepicker3.css" %>
+  <!-- Daterange picker -->
+  <%= stylesheet_link_tag "plugins/daterangepicker/daterangepicker.css" %>
+  <!-- bootstrap wysihtml5 - text editor -->
+  <%= stylesheet_link_tag "plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %>
+  </head>
+
+  <body>
+ <%= render 'admin/articles/partials/header' %>
+
+ <%= render 'admin/articles/partials/sidenavbar' %>
+ <%= render 'admin/articles/partials/togglebar' %>
+ 
+    <%= yield %>
+    <%= render 'admin/articles/partials/footer' %>
+  </body>
+</html>
